@@ -2,84 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
+<link rel="stylesheet" href="style.css">
 
-:root {
-	--lighter-white: color-mix(in srgb, white, black 10%);
-  --slightly-lighter-white: color-mix(in srgb, white, black 15%);
-  --even-lighter-white: color-mix(in srgb, white, black 20%);
-  --lighter-black: color-mix(in srgb, white, black 95%);
-  --pressed-white: color-mix(in srgb, white, black 60%);
-
-  --text-1: color-mix(in srgb, white, black 5%);
-}
-
-body {
-  background-color: #000000;
-  font-family: "Comic Sans MS", sans-serif;
-}
-
-p {
-  color: var(--text-1);
-}
-
-.container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.cool-button {	
-  margin: 0px;
-  width: fit-content;
-  color: white;
-  background: var(--lighter-black);
-  text-align: center;
-  border: solid 1px white;
-  padding: 20px;
-  border-radius: 2px;
-  transition: all 200ms ease-in-out;
-}
-
-.cool-button:hover {
-  color: black;
-  background: var(--lighter-white);
-  text-align: center;
-  border: solid 1px white;
-  border-radius: 100px;
-  scale: 1.05;
-}
-
-.cool-button:active {	
-  filter: blur(2px);
-  color: black;
-  background: var(--pressed-white);
-  text-align: center;
-  border: solid 1px white;
-  scale: 0.99;
-}
-
-a {
-  text-decoration: none;
-}
-
-.hellotext-container {
-  position: fixed;
-  bottom: 12px;
-  right: 12px;
-  background: var(--lighter-black);
-  padding: 3px;
-}
-
-.hello-text {
-  margin: 0px;
-  font-size: 7px;
-  color: var(--even-lighter-white);
-}
-
-</style>
 </head>
 <body>
 
