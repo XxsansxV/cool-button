@@ -9,7 +9,7 @@
   --text-1: color-mix(in srgb, white, black 5%);
 }
 
-html.inverted {
+.invert {
   filter: invert(1);
 }
 
