@@ -9,9 +9,18 @@
   --text-1: color-mix(in srgb, white, black 5%);
 }
 
+html.inverted {
+  filter: invert(1);
+}
+
+@view-transition {
+  navigation: auto;
+}
+
 body {
   background-color: #000000;
   font-family: "Comic Sans MS", sans-serif;
+  min-height: 100vh;
 }
 
 p {
@@ -66,6 +75,7 @@ a {
   right: 12px;
   background: var(--lighter-black);
   padding: 3px;
+  border-radius: 10px;
 }
 
 .hello-text {
