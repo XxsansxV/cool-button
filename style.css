@@ -1,3 +1,6 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 :root {
 	--lighter-white: color-mix(in srgb, white, black 10%);
@@ -80,6 +83,8 @@ hr {
   background-color: var(--slightly-lighter-black);
   border: solid 1px var(--slightly-lighter-white);
   padding: 10px;
+  min-width: 0;
+  height: 100%;
 }
 
 .lr-split:hover, .lefthand:hover, .righthand:hover {
