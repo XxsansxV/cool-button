@@ -6,6 +6,7 @@
 :root {
 	--lighter-white: color-mix(in srgb, white, black 10%);
   --lighter-black: color-mix(in srgb, white, black 95%);
+  --muted-white: color-mix(in srgb, white, black 40%);
   font-family: "Comic Sans MS", sans-serif;
 }
 
@@ -42,8 +43,9 @@ h1:hover {
 }
 
 h1:active {	
+  filter: blur(2px);
   color: black;
-  background: white;
+  background: var(--muted-white);
   text-align: center;
   border: solid 1px white;
   scale: 0.99;
