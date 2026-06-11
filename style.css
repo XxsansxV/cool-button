@@ -68,6 +68,7 @@ hr {
   border: solid 2px white;
   gap: 10px;
   max-width: 70%;
+  flex-wrap: wrap;
 }
 
 .lefthand {
@@ -84,7 +85,7 @@ hr {
   background-color: var(--slightly-lighter-black);
   border: solid 1px var(--slightly-lighter-white);
   padding: 10px;
-  min-width: 0;
+  min-width: 300px;
   height: 100%;
   flex: 1;
 }
