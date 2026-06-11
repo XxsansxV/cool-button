@@ -3,10 +3,12 @@
 	--lighter-white: color-mix(in srgb, white, black 10%);
   --slightly-lighter-white: color-mix(in srgb, white, black 15%);
   --even-lighter-white: color-mix(in srgb, white, black 20%);
-  --lighter-black: color-mix(in srgb, white, black 95%);
+  --lighter-black: color-mix(in srgb, white, black 99%);
+  --slightly-lighter-black: color-mix(in srgb, white, black 98%);
   --pressed-white: color-mix(in srgb, white, black 60%);
 
   --text-1: color-mix(in srgb, white, black 5%);
+  --text-0: white;
 }
 
 .invert {
@@ -25,6 +27,17 @@ body {
 
 p {
   color: var(--text-1);
+  margin: 0;
+}
+
+h2 {
+  color: var(--text-0);
+  margin: 0;
+}
+
+hr {
+  border: solid 1px var(--even-lighter-white);
+  width: 100%;
 }
 
 .container{
@@ -33,6 +46,60 @@ p {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.container-lined {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.lr-split {
+  background-color: var(--lighter-black);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  border: solid 2px white;
+  gap: 10px;
+}
+
+.lefthand {
+  display: flex;
+  flex-direction: row;
+  border: solid 1px var(--slightly-lighter-white);
+  background-color: var(--slightly-lighter-black);
+  overflow: hidden;
+}
+
+.righthand {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--slightly-lighter-black);
+  border: solid 1px var(--slightly-lighter-white);
+  padding: 10px;
+}
+
+.lr-split:hover, .lefthand:hover, .righthand:hover {
+  background-color: black;
+}
+
+.lr-split, .lefthand, .righthand {
+  transition: all 150ms ease-in-out;
+}
+
+.spoiler {
+  transition: all 150ms ease-in-out;
+}
+
+.invert.spoiler {
+  filter: blur(10px) invert(1);
+}
+
+.invert.spoiler:hover {
+  filter: blur(0px) invert(1);
 }
 
 .cool-button {	
@@ -75,7 +142,16 @@ a {
   right: 12px;
   background: var(--lighter-black);
   padding: 3px;
+}
+
+.hellotext-container:hover {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  background: var(--lighter-black);
+  padding: 3px;
   border-radius: 10px;
+  filter: invert(1);
 }
 
 .hello-text {
@@ -84,3 +160,6 @@ a {
   color: var(--even-lighter-white);
 }
 
+.hello-text, .hellotext-container {
+  transition: all 150ms ease-in-out;
+}
