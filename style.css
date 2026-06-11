@@ -54,9 +54,12 @@ hr {
 .container-lined {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
+  gap: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .lr-split {
@@ -85,7 +88,7 @@ hr {
   background-color: var(--slightly-lighter-black);
   border: solid 1px var(--slightly-lighter-white);
   padding: 10px;
-  min-width: 300px;
+  min-width: 200px;
   height: 100%;
   flex: 1;
 }
