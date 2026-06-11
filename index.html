@@ -5,8 +5,12 @@
 
 :root {
 	--lighter-white: color-mix(in srgb, white, black 10%);
+  --slightly-lighter-white: color-mix(in srgb, white, black 15%);
+  --even-lighter-white: color-mix(in srgb, white, black 20%);
   --lighter-black: color-mix(in srgb, white, black 95%);
   --pressed-white: color-mix(in srgb, white, black 60%);
+
+  --text-1: color-mix(in srgb, white, black 5%);
 }
 
 body {
@@ -14,8 +18,13 @@ body {
   font-family: "Comic Sans MS", sans-serif;
 }
 
+p {
+  color: var(--text-1);
+}
+
 .container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -55,14 +64,35 @@ a {
   text-decoration: none;
 }
 
+.hellotext-container {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  border: 1px solid var(--slightly-lighter-white);
+  background: var(--lighter-black);
+  padding: 3px;
+}
+
+.hello-text {
+  margin: 0px;
+  font-size: 7px;
+  color: var(--even-lighter-white);
+}
+
 </style>
 </head>
 <body>
 
 <div class="container">
+
 	<a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">
 		<h1 class="cool-button">Cool button</h1>
 	</a>
+
+</div>
+
+<div class="hellotext-container">
+  <p class="hello-text">Hello :)</p>
 </div>
 
 </body>
