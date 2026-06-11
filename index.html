@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+:root {
+	--lighter-white: color-mix(in srgb, white, black 10%);
+    --lighter-black: color-mix(in srgb, white, black 95%);
+}
+
+body {
+  background-color: #000000;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {	
+  width: fit-content;
+  color: white;
+  background: var(--lighter-black);
+  text-align: center;
+  border: solid 1px white;
+  padding: 20px;
+  border-radius: 2px;
+  transition: all 200ms ease-in-out;
+}
+
+h1:hover {
+  color: black;
+  background: var(--lighter-white);
+  text-align: center;
+  border: solid 1px white;
+  border-radius: 100px;
+  scale: 1.05;
+}
+
+h1:active {	
+  color: black;
+  background: white;
+  text-align: center;
+  border: solid 1px white;
+  scale: 0.99;
+}
+
+a {
+  text-decoration: none;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+	<a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">
+		<h1>Cool button</h1>
+	</a>
+</div>
+
+</body>
+</html>
+
+
