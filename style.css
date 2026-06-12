@@ -83,6 +83,10 @@ hr {
   overflow: hidden;
 }
 
+.lefthand img {
+  object-fit: cover;
+}
+
 .righthand {
   display: flex;
   flex-direction: column;
