@@ -6,6 +6,7 @@
 	--lighter-white: color-mix(in srgb, white, black 10%);
   --slightly-lighter-white: color-mix(in srgb, white, black 15%);
   --even-lighter-white: color-mix(in srgb, white, black 20%);
+  --supremely-lighter-white: color-mix(in srgb, white, black 30%);
   --lighter-black: color-mix(in srgb, white, black 99%);
   --slightly-lighter-black: color-mix(in srgb, white, black 98%);
   --pressed-white: color-mix(in srgb, white, black 60%);
@@ -66,7 +67,7 @@ hr {
   background-color: var(--lighter-black);
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   padding: 10px;
   border: solid 2px white;
   gap: 10px;
@@ -89,7 +90,7 @@ hr {
   border: solid 1px var(--slightly-lighter-white);
   padding: 10px;
   min-width: 200px;
-  height: 100%;
+  /* height: 100%; */
   flex: 1;
 }
 
@@ -173,4 +174,10 @@ a {
 
 .hello-text, .hellotext-container {
   transition: all 150ms ease-in-out;
+}
+
+@media (width <= 740px) {
+   .lr-split {
+      max-width: 95%;
+  } 
 }
