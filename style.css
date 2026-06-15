@@ -172,7 +172,7 @@ hr {
   filter: blur(10px) invert(1);
 }
 
-.invert.spoiler:hover :focus-visible {
+.invert.spoiler:hover, .invert.spoiler:focus-visible {
   filter: blur(0px) invert(1);
 }
 
@@ -219,11 +219,6 @@ a {
 }
 
 .hellotext-container:hover, .hellotext-container:focus-visible {
-  position: fixed;
-  bottom: 12px;
-  right: 12px;
-  background: var(--lighter-black);
-  padding: 3px;
   border-radius: 10px;
   filter: invert(1);
 }
