@@ -16,11 +16,32 @@
   --pressed-white: color-mix(in srgb, white, black 60%);
 
   --text-1: color-mix(in srgb, white, black 5%);
-  --text-0: white;
+  --text-0: color-mix(in srgb, white, black 3%);
+  --heading: color-mix(in srgb, white, black 1%);
+
+
+  --easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .invert {
   filter: invert(1);
+}
+
+@keyframes PopsIn {
+  from {
+    scale: 0.2;
+    filter: blur(15px);
+    opacity: 0.5;
+  }
+  to {
+    scale: 1;
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.PopsIn {
+  animation: PopsIn 0.7s var(--easeOutCubic) forwards;
 }
 
 @view-transition {
@@ -35,6 +56,18 @@ body {
 
 p {
   color: var(--text-1);
+  margin: 0;
+}
+
+h1 {
+  color: var(--heading);
+  font-size: 100px;
+  margin: 0;
+}
+
+h1.cooltext {
+  color: var(--heading);
+  font-size: 40px;
   margin: 0;
 }
 
@@ -63,8 +96,14 @@ hr {
   align-items: center;
   height: 100vh;
   gap: 20px;
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 50px;
+}
+
+.titlemaybe {
+  width: 95%;
+  text-align: center;
+  padding: 10px;
 }
 
 .lr-split {
