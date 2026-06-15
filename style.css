@@ -68,6 +68,11 @@
   animation: SlideFromRight 0.7s var(--easeOutCubic) forwards;
 }
 
+.PopsIn.visible,
+.SlideFromRight.visible {
+  animation-delay: calc(var(--index) * 80ms);
+}
+
 @view-transition {
   navigation: auto;
 }
