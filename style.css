@@ -40,8 +40,23 @@
   }
 }
 
+@keyframes SlideFromRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
 .PopsIn {
   animation: PopsIn 0.7s var(--easeOutCubic) forwards;
+}
+
+.SlideFromRight {
+  animation: SlideFromRight 0.7s var(--easeOutCubic) forwards;
 }
 
 @view-transition {
@@ -141,7 +156,7 @@ hr {
   flex: 1;
 }
 
-.lr-split:hover, .lefthand:hover, .righthand:hover {
+.lr-split:hover, .lr-split:focus-visible, .lefthand:hover, .lefthand:focus-visible, .righthand:hover, .righthand:focus-visible {
   background-color: black;
 }
 
@@ -157,7 +172,7 @@ hr {
   filter: blur(10px) invert(1);
 }
 
-.invert.spoiler:hover {
+.invert.spoiler:hover :focus-visible {
   filter: blur(0px) invert(1);
 }
 
@@ -173,7 +188,7 @@ hr {
   transition: all 200ms ease-in-out;
 }
 
-.cool-button:hover {
+.cool-button:hover, .cool-button:focus-visible {
   color: black;
   background: var(--lighter-white);
   text-align: center;
@@ -203,7 +218,7 @@ a {
   padding: 3px;
 }
 
-.hellotext-container:hover {
+.hellotext-container:hover, .hellotext-container:focus-visible {
   position: fixed;
   bottom: 12px;
   right: 12px;
