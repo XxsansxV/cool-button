@@ -1,9 +1,15 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 :root {
-	--lighter-white: color-mix(in srgb, white, black 10%);
+  --lighter-white: color-mix(in srgb, white, black 10%);
   --slightly-lighter-white: color-mix(in srgb, white, black 15%);
   --even-lighter-white: color-mix(in srgb, white, black 20%);
   --supremely-lighter-white: color-mix(in srgb, white, black 30%);
@@ -12,11 +18,59 @@
   --pressed-white: color-mix(in srgb, white, black 60%);
 
   --text-1: color-mix(in srgb, white, black 5%);
-  --text-0: white;
+  --text-0: color-mix(in srgb, white, black 3%);
+  --heading: color-mix(in srgb, white, black 1%);
+
+
+  --easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .invert {
   filter: invert(1);
+}
+
+@keyframes PopsIn {
+  from {
+    scale: 0.2;
+    filter: blur(15px);
+    opacity: 0.5;
+  }
+
+  to {
+    scale: 1;
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes SlideFromRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0.7;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.PopsIn,
+.SlideFromRight {
+  opacity: 0;
+}
+
+.PopsIn.visible {
+  animation: PopsIn 0.7s var(--easeOutCubic) forwards;
+}
+
+.SlideFromRight.visible {
+  animation: SlideFromRight 0.7s var(--easeOutCubic) forwards;
+}
+
+.PopsIn.visible,
+.SlideFromRight.visible {
+  animation-delay: calc(var(--index) * 80ms);
 }
 
 @view-transition {
@@ -34,6 +88,18 @@ p {
   margin: 0;
 }
 
+h1 {
+  color: var(--heading);
+  font-size: 100px;
+  margin: 0;
+}
+
+h1.cooltext {
+  color: var(--heading);
+  font-size: 40px;
+  margin: 0;
+}
+
 h2 {
   color: var(--text-0);
   margin: 0;
@@ -44,7 +110,7 @@ hr {
   width: 100%;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,8 +125,14 @@ hr {
   align-items: center;
   height: 100vh;
   gap: 20px;
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 50px;
+}
+
+.titlemaybe {
+  width: 95%;
+  text-align: center;
+  padding: 10px;
 }
 
 .lr-split {
@@ -98,11 +170,18 @@ hr {
   flex: 1;
 }
 
-.lr-split:hover, .lefthand:hover, .righthand:hover {
+.lr-split:hover,
+.lr-split:focus-visible,
+.lefthand:hover,
+.lefthand:focus-visible,
+.righthand:hover,
+.righthand:focus-visible {
   background-color: black;
 }
 
-.lr-split, .lefthand, .righthand {
+.lr-split,
+.lefthand,
+.righthand {
   transition: all 150ms ease-in-out;
 }
 
@@ -114,11 +193,12 @@ hr {
   filter: blur(10px) invert(1);
 }
 
-.invert.spoiler:hover {
+.invert.spoiler:hover,
+.invert.spoiler:focus-visible {
   filter: blur(0px) invert(1);
 }
 
-.cool-button {	
+.cool-button {
   margin: 0px;
   width: fit-content;
   color: white;
@@ -130,7 +210,8 @@ hr {
   transition: all 200ms ease-in-out;
 }
 
-.cool-button:hover {
+.cool-button:hover,
+.cool-button:focus-visible {
   color: black;
   background: var(--lighter-white);
   text-align: center;
@@ -139,7 +220,7 @@ hr {
   scale: 1.05;
 }
 
-.cool-button:active {	
+.cool-button:active {
   filter: blur(2px);
   color: black;
   background: var(--pressed-white);
@@ -160,12 +241,8 @@ a {
   padding: 3px;
 }
 
-.hellotext-container:hover {
-  position: fixed;
-  bottom: 12px;
-  right: 12px;
-  background: var(--lighter-black);
-  padding: 3px;
+.hellotext-container:hover,
+.hellotext-container:focus-visible {
   border-radius: 10px;
   filter: invert(1);
 }
@@ -176,12 +253,13 @@ a {
   color: var(--even-lighter-white);
 }
 
-.hello-text, .hellotext-container {
+.hello-text,
+.hellotext-container {
   transition: all 150ms ease-in-out;
 }
 
-@media (width <= 740px) {
-   .lr-split {
-      max-width: 95%;
-  } 
+@media (width <=740px) {
+  .lr-split {
+    max-width: 95%;
+  }
 }
