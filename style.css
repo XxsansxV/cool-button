@@ -21,7 +21,7 @@
   --text-0: color-mix(in srgb, white, black 3%);
   --heading: color-mix(in srgb, white, black 1%);
 
-
+  --grid-color: rgba(255, 255, 255, 0.1);
   --easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
@@ -79,6 +79,10 @@
 
 body {
   background-color: #000000;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
   font-family: "Comic Sans MS", sans-serif;
   min-height: 100vh;
 }
@@ -238,6 +242,7 @@ a {
   bottom: 12px;
   right: 12px;
   background: var(--lighter-black);
+  border: solid 0.75px var(--slightly-lighter-white);
   padding: 3px;
 }
 
