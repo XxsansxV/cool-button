@@ -21,6 +21,8 @@
   --text-0: color-mix(in srgb, white, black 3%);
   --heading: color-mix(in srgb, white, black 1%);
 
+  --grid-color: rgba(255, 255, 255, 0.1);
+  --gridHoverColor: rgba(255, 255, 255, 0.1);
 
   --easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
 }
@@ -46,7 +48,7 @@
 @keyframes SlideFromRight {
   from {
     transform: translateX(50px);
-    opacity: 0.7;
+    opacity: 0.4;
   }
 
   to {
@@ -66,11 +68,31 @@
 
 .SlideFromRight.visible {
   animation: SlideFromRight 0.7s var(--easeOutCubic) forwards;
+  animation-delay: 700ms;
 }
 
-.PopsIn.visible,
-.SlideFromRight.visible {
+.PopsIn.visible {
   animation-delay: calc(var(--index) * 80ms);
+}
+
+.ShouldGlow {
+  display: flex;
+  filter: drop-shadow(0px 0px 50px rgba(255, 255, 255, 0.3));
+  transition: filter 150ms ease-in-out;
+}
+
+.ShouldGlow:hover {
+  filter: drop-shadow(0px 0px 100px rgba(255, 255, 255, 0.7));
+}
+
+.ShouldGlowSoftly {
+  display: flex;
+  filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 0.15));
+  transition: filter 150ms ease-in-out;
+}
+
+.ShouldGlowSoftly:hover {
+  filter: drop-shadow(0px 0px 50px rgba(255, 255, 255, 0.3));
 }
 
 @view-transition {
@@ -79,6 +101,13 @@
 
 body {
   background-color: #000000;
+  background-image:
+    radial-gradient(circle 100px at var(--mouse-x, -999px) var(--mouse-y, -999px), var(--gridHoverColor), transparent),
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  background-attachment: fixed, scroll, scroll;
+
   font-family: "Comic Sans MS", sans-serif;
   min-height: 100vh;
 }
@@ -238,6 +267,7 @@ a {
   bottom: 12px;
   right: 12px;
   background: var(--lighter-black);
+  border: solid 0.3px var(--slightly-lighter-white);
   padding: 3px;
 }
 
