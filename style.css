@@ -46,7 +46,7 @@
 @keyframes SlideFromRight {
   from {
     transform: translateX(50px);
-    opacity: 0.7;
+    opacity: 0.4;
   }
 
   to {
@@ -242,7 +242,7 @@ a {
   bottom: 12px;
   right: 12px;
   background: var(--lighter-black);
-  border: solid 0.75px var(--slightly-lighter-white);
+  border: solid 0.3px var(--slightly-lighter-white);
   padding: 3px;
 }
 
